@@ -1,0 +1,27 @@
+# Configuration Fine-tuning Mystique
+model:
+  base_model: "Qwen/Qwen2.5-1.5B-Instruct"
+  output_dir: "./fine_tuned_models/mystical_qwen"
+  
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  num_epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2e-4
+  warmup_steps: 100
+  max_length: 1024
+  
+dataset:
+  num_examples: 1000
+  train_split: 0.9
+  
+mystical:
+  intensity: 0.9
+  style: "hermetic_master"
+  language: "fr"

@@ -1,9 +1,0 @@
-{
-  "documents_processed": 2,
-  "chunks_created": 751,
-  "processing_time": 60.75813102722168,
-  "files_processed": [
-    "data/raw/Glossaire-des-tests-logiciels-v3_2F-ISTQB-CFTL-1.pdf",
-    "data/raw/ISTQB-Syllabus-Niveau-Fondation-v4.0-Francais.pdf"
-  ]
-}

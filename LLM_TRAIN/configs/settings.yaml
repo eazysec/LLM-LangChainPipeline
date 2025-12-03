@@ -1,0 +1,66 @@
+# Configuration principale du chatbot RAG
+app:
+  name: "ChatBot RAG"
+  version: "1.0.0"
+  debug: true
+  host: "0.0.0.0"
+  port: 8000
+
+# Configuration des modèles
+models:
+  # Configuration Ollama
+  ollama:
+    base_url: "http://100.64.0.34:11434"
+    model_name: "qwen3:"  # ou "qwen:latest" selon votre installation
+    temperature: 0.1
+    max_tokens: 2048
+    timeout: 300
+
+  # Modèle d'embeddings
+  embeddings:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+    device: "cpu"  # ou "cuda" si GPU disponible
+
+# Configuration de la base de données vectorielle
+database:
+  # Configuration ChromaDB
+  chroma:
+    persist_directory: "./data/chroma_db"
+    collection_name: "documents"
+    
+  # Configuration des conversations
+  conversations:
+    max_history: 10
+    session_timeout: 3600  # en secondes
+
+# Configuration RAG
+rag:
+  chunk_size: 500
+  chunk_overlap: 50
+  top_k: 5  # nombre de documents à récupérer
+  similarity_threshold: 0.7
+
+# Configuration de la recherche web
+web_search:
+  enabled: true
+  provider: "duckduckgo"
+  max_results: 3
+  fallback_threshold: 0.5  # seuil pour déclencher la recherche web
+
+# Configuration des logs
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./logs/app.log"
+
+# Sécurité
+security:
+  cors_origins: ["*"]
+  max_file_size: 10485760  # 10MB
+  allowed_extensions: [".pdf", ".txt", ".docx", ".md"]
+
+# Interface utilisateur
+ui:
+  title: "ChatBot RAG - Assistant IA"
+  description: "Assistant IA avec recherche augmentée et historique des conversations"
+  theme: "dark" 

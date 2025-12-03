@@ -1,0 +1,465 @@
+"""
+Pipeline LangChain pour système RAG - Version native et optimisée
+"""
+
+import logging
+from typing import List, Dict, Any, Optional, Tuple
+from pathlib import Path
+import asyncio
+
+# LangChain Core
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS, Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.retrievers import BM25Retriever
+from langchain_classic.retrievers import EnsembleRetriever
+from langchain_classic.retrievers.multi_query import MultiQueryRetriever
+
+# LangChain Chains
+from langchain_classic.chains import RetrievalQA, ConversationalRetrievalChain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains.retrieval import create_retrieval_chain
+from langchain_classic.chains.history_aware_retriever import create_history_aware_retriever
+
+# LangChain Memory
+from langchain_classic.memory import ConversationBufferWindowMemory, ConversationSummaryBufferMemory
+
+# LangChain Prompts
+from langchain_classic.prompts import PromptTemplate, ChatPromptTemplate, MessagesPlaceholder
+
+# LangChain LLMs
+from langchain_community.llms import Ollama
+from langchain_classic.callbacks.manager import CallbackManager
+from langchain_classic.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+
+# Document Loaders
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
+
+logger = logging.getLogger(__name__)
+
+class LangChainRAGPipeline:
+    """
+    Pipeline RAG complet utilisant LangChain de manière native.
+    
+    Architecture:
+    📚 Documents → 🔪 Chunking → 🧠 Embeddings → 📊 VectorStore → 🔍 Retriever → 🔗 Chain → 💬 Response
+    """
+    
+    def __init__(self, 
+                 data_path: str = "data/raw",
+                 vector_store_path: str = "data/processed/langchain_vectorstore",
+                 model_name: str = "qwen2.5:1.5b",
+                 embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"):
+        """
+        Initialise le pipeline LangChain RAG.
+        
+        Args:
+            data_path: Chemin vers les documents sources
+            vector_store_path: Chemin pour stocker l'index vectoriel
+            model_name: Nom du modèle Ollama
+            embedding_model: Modèle d'embeddings à utiliser
+        """
+        self.data_path = Path(data_path)
+        self.vector_store_path = Path(vector_store_path)
+        self.model_name = model_name
+        self.embedding_model_name = embedding_model
+        
+        # Composants LangChain
+        self.embeddings = None
+        self.vector_store = None
+        self.retriever = None
+        self.llm = None
+        self.memory = None
+        self.chain = None
+        
+        # Configuration
+        self.chunk_size = 500
+        self.chunk_overlap = 50
+        self.top_k = 3
+        self.memory_window = 10
+        
+        logger.info("🔗 Pipeline LangChain RAG initialisé")
+    
+    async def initialize(self) -> None:
+        """Initialise tous les composants du pipeline."""
+        try:
+            logger.info("🚀 Initialisation du pipeline LangChain...")
+            
+            # 1. Modèle d'embeddings
+            await self._setup_embeddings()
+            
+            # 2. Chargement ou création du vector store
+            await self._setup_vector_store()
+            
+            # 3. Configuration du retriever
+            await self._setup_retriever()
+            
+            # 4. Configuration du LLM
+            await self._setup_llm()
+            
+            # 5. Configuration de la mémoire
+            await self._setup_memory()
+            
+            # 6. Création de la chaîne RAG
+            await self._setup_chain()
+            
+            logger.info("✅ Pipeline LangChain complètement initialisé")
+            
+        except Exception as e:
+            logger.error(f"❌ Erreur initialisation pipeline: {e}")
+            raise
+    
+    async def _setup_embeddings(self) -> None:
+        """Configure le modèle d'embeddings."""
+        logger.info(f"🧠 Configuration embeddings: {self.embedding_model_name}")
+        
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name=self.embedding_model_name,
+            model_kwargs={'device': 'cpu'},
+            encode_kwargs={'normalize_embeddings': True}
+        )
+        
+        logger.info("✅ Embeddings configurés")
+    
+    async def _setup_vector_store(self) -> None:
+        """Configure le vector store (FAISS ou Chroma)."""
+        try:
+            # Essayer de charger un vector store existant
+            if self.vector_store_path.exists():
+                logger.info("📂 Chargement vector store existant...")
+                self.vector_store = FAISS.load_local(
+                    str(self.vector_store_path), 
+                    self.embeddings,
+                    allow_dangerous_deserialization=True
+                )
+                logger.info(f"✅ Vector store chargé: {self.vector_store.index.ntotal} vecteurs")
+            else:
+                logger.info("🔨 Création nouveau vector store...")
+                await self._create_vector_store()
+                
+        except Exception as e:
+            logger.warning(f"⚠️ Erreur chargement vector store: {e}")
+            logger.info("🔨 Création nouveau vector store...")
+            await self._create_vector_store()
+    
+    async def _create_vector_store(self) -> None:
+        """Crée un nouveau vector store à partir des documents."""
+        logger.info("📚 Chargement des documents...")
+        
+        # Chargement des documents
+        documents = await self._load_documents()
+        
+        if not documents:
+            raise ValueError("Aucun document trouvé pour créer le vector store")
+        
+        # Chunking des documents
+        logger.info("✂️ Chunking des documents...")
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=self.chunk_size,
+            chunk_overlap=self.chunk_overlap,
+            separators=["\n\n", "\n", ".", " ", ""]
+        )
+        
+        chunks = text_splitter.split_documents(documents)
+        logger.info(f"📄 {len(chunks)} chunks créés")
+        
+        # Création du vector store
+        logger.info("🔧 Création index vectoriel...")
+        self.vector_store = FAISS.from_documents(chunks, self.embeddings)
+        
+        # Sauvegarde
+        self.vector_store_path.mkdir(parents=True, exist_ok=True)
+        self.vector_store.save_local(str(self.vector_store_path))
+        
+        logger.info(f"✅ Vector store créé et sauvegardé: {len(chunks)} chunks")
+    
+    async def _load_documents(self) -> List[Document]:
+        """Charge tous les documents du répertoire."""
+        documents = []
+        
+        # Chargement des PDFs
+        pdf_loader = DirectoryLoader(
+            str(self.data_path),
+            glob="**/*.pdf",
+            loader_cls=PyPDFLoader,
+            show_progress=True
+        )
+        pdf_docs = pdf_loader.load()
+        documents.extend(pdf_docs)
+        logger.info(f"📄 {len(pdf_docs)} documents PDF chargés")
+        
+        # Chargement des fichiers texte
+        txt_loader = DirectoryLoader(
+            str(self.data_path),
+            glob="**/*.txt",
+            loader_cls=TextLoader,
+            show_progress=True
+        )
+        txt_docs = txt_loader.load()
+        documents.extend(txt_docs)
+        logger.info(f"📝 {len(txt_docs)} documents TXT chargés")
+        
+        logger.info(f"📚 Total: {len(documents)} documents chargés")
+        return documents
+    
+    async def _setup_retriever(self) -> None:
+        """Configure le retriever avec des stratégies avancées."""
+        logger.info("🔍 Configuration du retriever...")
+        
+        # Retriever vectoriel de base
+        vector_retriever = self.vector_store.as_retriever(
+            search_type="similarity_score_threshold",
+            search_kwargs={
+                "k": self.top_k,
+                "score_threshold": 0.3
+            }
+        )
+        
+        # Multi-query retriever pour améliorer les résultats
+        self.retriever = MultiQueryRetriever.from_llm(
+            retriever=vector_retriever,
+            llm=self.llm,  # ✅ Utilise le LLM déjà initialisé
+        )
+        
+        logger.info("✅ Retriever configuré")
+    
+    async def _setup_llm(self) -> None:
+        """Configure le modèle LLM (Ollama)."""
+        logger.info(f"🤖 Configuration LLM: {self.model_name}")
+        
+        callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
+        
+        self.llm = Ollama(
+            model=self.model_name,
+            callback_manager=callback_manager,
+            temperature=0.1,
+            top_p=0.9,
+            num_ctx=4096,
+            stop=["Human:", "Assistant:"]
+        )
+
+        
+        logger.info("✅ LLM configuré")
+    
+    async def _setup_memory(self) -> None:
+        """Configure la mémoire conversationnelle."""
+        logger.info("🧠 Configuration mémoire conversationnelle...")
+        
+        # Mémoire avec fenêtre glissante
+        self.memory = ConversationBufferWindowMemory(
+            memory_key="chat_history",
+            output_key="answer",
+            return_messages=True,
+            k=self.memory_window
+        )
+        
+        logger.info(f"✅ Mémoire configurée (fenêtre: {self.memory_window})")
+    
+    async def _setup_chain(self) -> None:
+        """Configure la chaîne RAG complète."""
+        logger.info("🔗 Configuration chaîne RAG...")
+        
+        # Template de prompt pour le contexte
+        contextualize_q_system_prompt = """
+        Tu es un assistant expert en tests logiciels et certification ISTQB.
+        
+        Contexte: Tu as accès au Syllabus ISTQB Niveau Fondation v4.0 et au Glossaire ISTQB/CFTL.
+
+        Tâche: Reformule la question suivante pour qu'elle soit claire, précise et recherchable dans la base documentaire ISTQB. Si la question fait référence à des éléments de l'historique, intègre ces références. Utilise la terminologie officielle ISTQB quand c'est pertinent.
+        Si la question fait référence à des éléments précédents, intègre ces références.
+        Utilise la terminologie officielle ISTQB quand c'est pertinent.
+        
+        Important:
+        - Ne réponds QUE par la question reformulée, sans explication
+        - Si l'utilisateur utilise un terme vague, traduis-le en terminologie ISTQB précise
+        """
+        
+        contextualize_q_prompt = ChatPromptTemplate.from_messages([
+            ("system", contextualize_q_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ])
+        
+        # Debug: Vérifier que tout est initialisé
+        logger.info(f"🔍 Debug - LLM: {self.llm}")
+        logger.info(f"🔍 Debug - Retriever: {self.retriever}")
+        logger.info(f"🔍 Debug - Prompt: {contextualize_q_prompt}")
+        
+        # Retriever conscient de l'historique
+        history_aware_retriever = create_history_aware_retriever(
+            self.llm, self.retriever, contextualize_q_prompt
+        )
+        
+        # Template de prompt pour la réponse
+        qa_system_prompt = """
+        Tu es un formateur expert certifié ISTQB, spécialisé dans la préparation à la certification Testeur Niveau Fondation.
+        
+        EXPERTISE: 
+        - Syllabus ISTQB Niveau Fondation v4.0 (tous chapitres)
+        - Glossaire officiel ISTQB/CFTL v3.2F 
+        - Objectifs d'apprentissage et niveaux de connaissance (K1, K2, K3) 
+        - Questions types d'examen de certification 
+        - Bonnes pratiques professionnelles en tests logiciels
+        
+        INSTRUCTIONS:
+        1. Utilise UNIQUEMENT les documents fournis comme sources
+        2. Si tu mentionnes des informations, cite les sources naturellement
+        3. Réponds en français de manière claire et érudite
+        4. Si les documents ne contiennent pas l'information, dis-le clairement
+        5. Sois précis et évite les généralités
+        
+        CONTEXTE DOCUMENTAIRE:
+        {context}
+        
+        IMPORTANT: Reste fidèle aux sources fournies et évite toute interprétation non documentée.
+        """
+        
+        qa_prompt = ChatPromptTemplate.from_messages([
+            ("system", qa_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ])
+        
+        # Chaîne de réponse avec documents
+        question_answer_chain = create_stuff_documents_chain(self.llm, qa_prompt)
+        
+        # Chaîne RAG complète
+        self.chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+        
+        logger.info("✅ Chaîne RAG configurée")
+    
+    async def query(self, 
+                   question: str, 
+                   session_id: str = "default") -> Dict[str, Any]:
+        """
+        Interroge le système RAG.
+        
+        Args:
+            question: Question de l'utilisateur
+            session_id: ID de session pour la mémoire
+            
+        Returns:
+            Réponse structurée avec métadonnées
+        """
+        if not self.chain:
+            raise ValueError("Pipeline non initialisé. Appelez initialize() d'abord.")
+        
+        try:
+            logger.info(f"❓ Question: {question}")
+            
+            # Récupération de l'historique (simulé pour l'exemple)
+            chat_history = self._get_session_history(session_id)
+            
+            # Invocation de la chaîne
+            response = await asyncio.get_event_loop().run_in_executor(
+                None,
+                lambda: self.chain.invoke({
+                    "input": question,
+                    "chat_history": chat_history
+                })
+            )
+            
+            # Sauvegarde dans la mémoire
+            self._save_to_memory(question, response["answer"], session_id)
+            
+            # Formatage de la réponse
+            result = {
+                "answer": response["answer"],
+                "sources": [
+                    {
+                        "content": doc.page_content[:200] + "...",
+                        "metadata": doc.metadata,
+                        "score": getattr(doc, 'score', 0.0)
+                    }
+                    for doc in response.get("context", [])
+                ],
+                "session_id": session_id,
+                "metadata": {
+                    "model_used": self.model_name,
+                    "num_sources": len(response.get("context", [])),
+                    "pipeline": "langchain_native"
+                }
+            }
+            
+            logger.info(f"✅ Réponse générée avec {len(result['sources'])} sources")
+            return result
+            
+        except Exception as e:
+            logger.error(f"❌ Erreur query RAG: {e}")
+            raise
+    
+    def _get_session_history(self, session_id: str) -> List[Dict[str, str]]:
+        """Récupère l'historique de session (à implémenter avec une vraie DB)."""
+        # TODO: Intégrer avec la base de données existante
+        return []
+    
+    def _save_to_memory(self, question: str, answer: str, session_id: str) -> None:
+        """Sauvegarde dans la mémoire."""
+        if self.memory:
+            self.memory.save_context(
+                {"input": question},
+                {"answer": answer}
+            )
+    
+    async def add_documents(self, documents: List[Document]) -> None:
+        """Ajoute de nouveaux documents au vector store."""
+        if not self.vector_store:
+            raise ValueError("Vector store non initialisé")
+        
+        logger.info(f"➕ Ajout de {len(documents)} nouveaux documents...")
+        
+        # Chunking
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=self.chunk_size,
+            chunk_overlap=self.chunk_overlap
+        )
+        chunks = text_splitter.split_documents(documents)
+        
+        # Ajout au vector store
+        self.vector_store.add_documents(chunks)
+        
+        # Sauvegarde
+        self.vector_store.save_local(str(self.vector_store_path))
+        
+        logger.info(f"✅ {len(chunks)} chunks ajoutés et sauvegardés")
+    
+    def get_stats(self) -> Dict[str, Any]:
+        """Retourne les statistiques du pipeline."""
+        return {
+            "vector_store_size": self.vector_store.index.ntotal if self.vector_store else 0,
+            "model_name": self.model_name,
+            "embedding_model": self.embedding_model_name,
+            "chunk_size": self.chunk_size,
+            "top_k": self.top_k,
+            "memory_window": self.memory_window
+        }
+
+# Factory functions pour faciliter l'utilisation
+async def create_langchain_rag_pipeline(**kwargs) -> LangChainRAGPipeline:
+    """
+    Crée et initialise un pipeline LangChain RAG.
+    
+    Usage:
+        pipeline = await create_langchain_rag_pipeline()
+        result = await pipeline.query("Que dit John Dee sur l'alchimie ?")
+    """
+    pipeline = LangChainRAGPipeline(**kwargs)
+    await pipeline.initialize()
+    return pipeline
+
+if __name__ == "__main__":
+    async def main():
+        # Exemple d'utilisation
+        pipeline = await create_langchain_rag_pipeline()
+        
+        # Test de requête
+        result = await pipeline.query(
+            "Explique-moi les mystères alchimiques de John Dee selon ses écrits"
+        )
+        
+        print(f"Réponse: {result['answer']}")
+        print(f"Sources: {len(result['sources'])}")
+        print(f"Stats: {pipeline.get_stats()}")
+    
+    # asyncio.run(main()) 

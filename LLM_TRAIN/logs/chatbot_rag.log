@@ -1,0 +1,642 @@
+2025-11-24 18:55:42,192 - api.main - INFO - Initialisation de l'application...
+2025-11-24 18:55:42,194 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-24 18:55:42,194 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-24 18:55:42,194 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-24 18:55:42,195 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 18:55:42,196 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 18:55:46,334 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-24 18:55:46,334 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-24 18:55:46,571 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 18:55:46,592 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 18:55:46,592 - embeddings.build_index - INFO - Collection ChromaDB créée: documents
+2025-11-24 18:55:46,592 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 18:55:46,592 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-24 18:55:46,592 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-24 18:55:46,592 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-24 18:55:46,610 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-24 18:55:46,610 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-24 18:55:46,610 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-24 18:55:46,610 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-24 18:55:46,610 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-24 18:55:46,610 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-24 18:55:46,610 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-24 18:55:46,610 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-24 18:55:46,611 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-24 18:55:46,611 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-24 18:55:46,611 - api.main - INFO - Application initialisée avec succès
+2025-11-24 19:54:15,362 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 19:59:59,248 - api.main - INFO - Initialisation de l'application...
+2025-11-24 19:59:59,251 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-24 19:59:59,251 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-24 19:59:59,251 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-24 19:59:59,251 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 19:59:59,252 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:00:01,083 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-24 20:00:01,083 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-24 20:00:01,200 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 20:00:01,201 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-24 20:00:01,201 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:00:01,201 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-24 20:00:01,201 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-24 20:00:01,201 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-24 20:00:01,217 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-24 20:00:01,218 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-24 20:00:01,218 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-24 20:00:01,218 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-24 20:00:01,218 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-24 20:00:01,218 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-24 20:00:01,218 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-24 20:00:01,218 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-24 20:00:01,218 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-24 20:00:01,219 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-24 20:00:01,219 - api.main - INFO - Application initialisée avec succès
+2025-11-24 20:00:01,219 - api.main - INFO - Arrêt de l'application...
+2025-11-24 20:00:01,219 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-24 20:00:01,219 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-24 20:02:50,628 - api.main - INFO - Arrêt de l'application...
+2025-11-24 20:02:50,628 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-24 20:02:50,628 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-24 20:03:03,909 - api.main - INFO - Initialisation de l'application...
+2025-11-24 20:03:03,912 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-24 20:03:03,912 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-24 20:03:03,912 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-24 20:03:03,912 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:03:03,914 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:03:05,393 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-24 20:03:05,393 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-24 20:03:05,508 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 20:03:05,508 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-24 20:03:05,508 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:03:05,508 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-24 20:03:05,508 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-24 20:03:05,508 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-24 20:03:05,524 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-24 20:03:05,524 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-24 20:03:05,524 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-24 20:03:05,524 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-24 20:03:05,525 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-24 20:03:05,525 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-24 20:03:05,525 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-24 20:03:05,525 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-24 20:03:05,525 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-24 20:03:05,525 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-24 20:03:05,525 - api.main - INFO - Application initialisée avec succès
+2025-11-24 20:03:31,110 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:03:58,450 - api.routes.qa - INFO - Nouvelle requête de chat: 'c'est quoi mon prénom ?...'
+2025-11-24 20:03:58,450 - llm.chain_builder - INFO - Génération RAG pour: 'c'est quoi mon prénom ?...'
+2025-11-24 20:03:58,478 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 20:03:58,478 - retriever.retriever - INFO - Récupération terminée: 0 résultats pour 'c'est quoi mon prénom ?...'
+2025-11-24 20:03:58,478 - llm.web_search - INFO - Recherche web: 'c'est quoi mon prénom ?'
+2025-11-24 20:03:58,619 - httpx - INFO - HTTP Request: POST https://duckduckgo.com "HTTP/2 200 OK"
+2025-11-24 20:03:59,048 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=0&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:03:59,236 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=50&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:03:59,515 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=100&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:03:59,617 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=150&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:03:59,839 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=200&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:00,110 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=250&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:00,352 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=300&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:00,659 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=350&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:01,051 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=400&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:01,256 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=450&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:01,405 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=500&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:01,406 - llm.web_search - INFO - Recherche terminée en 2.93s - 0 résultats
+2025-11-24 20:04:54,052 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:04:54,052 - llm.ollama_client - INFO - Génération terminée en 52.65s - 626 caractères
+2025-11-24 20:04:54,052 - llm.chain_builder - INFO - Réponse RAG générée en 55.60s
+2025-11-24 20:04:54,052 - api.services.rag_service - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:04:54,052 - api.routes.qa - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:04:54,054 - api.routes.qa - INFO - Nouvelle requête de chat: 'c'est quoi mon prénom ?...'
+2025-11-24 20:04:54,054 - llm.chain_builder - INFO - Génération RAG pour: 'c'est quoi mon prénom ?...'
+2025-11-24 20:04:54,065 - retriever.retriever - INFO - Récupération terminée: 0 résultats pour 'c'est quoi mon prénom ?...'
+2025-11-24 20:04:54,065 - llm.web_search - INFO - Recherche web: 'c'est quoi mon prénom ?'
+2025-11-24 20:04:54,217 - httpx - INFO - HTTP Request: POST https://duckduckgo.com "HTTP/2 200 OK"
+2025-11-24 20:04:54,417 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=0&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:54,523 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=50&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:54,615 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=100&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:54,716 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=150&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:54,824 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=200&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:54,948 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=250&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:55,035 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=300&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:55,120 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=350&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:55,210 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=400&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:55,380 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=450&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:55,513 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=500&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:04:55,514 - llm.web_search - INFO - Recherche terminée en 1.45s - 0 résultats
+2025-11-24 20:05:16,294 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:05:16,294 - llm.ollama_client - INFO - Génération terminée en 20.78s - 401 caractères
+2025-11-24 20:05:16,294 - llm.chain_builder - INFO - Réponse RAG générée en 22.24s
+2025-11-24 20:05:16,294 - api.services.rag_service - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:05:16,294 - api.routes.qa - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:05:16,295 - api.routes.qa - INFO - Nouvelle requête de chat: 'Mon prénom c'est Bob...'
+2025-11-24 20:05:16,295 - llm.chain_builder - INFO - Génération RAG pour: 'Mon prénom c'est Bob...'
+2025-11-24 20:05:16,307 - retriever.retriever - INFO - Récupération terminée: 0 résultats pour 'Mon prénom c'est Bob...'
+2025-11-24 20:05:16,307 - llm.web_search - INFO - Recherche web: 'Mon prénom c'est Bob'
+2025-11-24 20:05:16,436 - httpx - INFO - HTTP Request: POST https://duckduckgo.com "HTTP/2 200 OK"
+2025-11-24 20:05:17,407 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=0&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:17,682 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=50&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:18,194 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=100&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:18,641 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=150&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:18,933 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=200&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:19,202 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=250&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:19,442 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=300&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:19,746 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=350&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:20,003 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=400&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:20,120 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=450&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:20,347 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Mon%20pr%C3%A9nom%20c%27est%20Bob&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=500&df=&vqd=4-3138809103696060082072240885898598776&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:20,347 - llm.web_search - INFO - Recherche terminée en 4.04s - 0 résultats
+2025-11-24 20:05:53,632 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:05:53,632 - llm.ollama_client - INFO - Génération terminée en 33.29s - 388 caractères
+2025-11-24 20:05:53,632 - llm.chain_builder - INFO - Réponse RAG générée en 37.34s
+2025-11-24 20:05:53,632 - api.services.rag_service - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:05:53,632 - api.routes.qa - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:05:53,634 - api.routes.qa - INFO - Nouvelle requête de chat: 'c'est quoi mon prénom ?...'
+2025-11-24 20:05:53,634 - llm.chain_builder - INFO - Génération RAG pour: 'c'est quoi mon prénom ?...'
+2025-11-24 20:05:53,648 - retriever.retriever - INFO - Récupération terminée: 0 résultats pour 'Contexte: c'est quoi mon prénom ? Question: c'est ...'
+2025-11-24 20:05:53,648 - llm.web_search - INFO - Recherche web: 'c'est quoi mon prénom ?'
+2025-11-24 20:05:53,780 - httpx - INFO - HTTP Request: POST https://duckduckgo.com "HTTP/2 200 OK"
+2025-11-24 20:05:53,978 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=0&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,084 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=50&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,190 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=100&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,288 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=150&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,393 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=200&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,490 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=250&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,578 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=300&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,682 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=350&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,779 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=400&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,864 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=450&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,975 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=c%27est%20quoi%20mon%20pr%C3%A9nom%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=500&df=&vqd=4-117253301509764301889592518163152904525&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-24 20:05:54,975 - llm.web_search - INFO - Recherche terminée en 1.33s - 0 résultats
+2025-11-24 20:07:08,072 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:07:08,072 - llm.ollama_client - INFO - Génération terminée en 73.10s - 600 caractères
+2025-11-24 20:07:08,072 - llm.chain_builder - INFO - Réponse RAG générée en 74.44s
+2025-11-24 20:07:08,072 - api.services.rag_service - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:07:08,072 - api.routes.qa - INFO - Réponse générée pour session session_7g7uh28y8
+2025-11-24 20:15:03,284 - api.main - INFO - Arrêt de l'application...
+2025-11-24 20:15:03,285 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-24 20:15:03,285 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-24 20:15:23,353 - api.main - INFO - Initialisation de l'application...
+2025-11-24 20:15:23,356 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-24 20:15:23,361 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-24 20:15:23,361 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-24 20:15:23,361 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:15:23,363 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:15:24,887 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-24 20:15:24,888 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-24 20:15:24,997 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 20:15:24,998 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-24 20:15:24,998 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 20:15:24,998 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-24 20:15:24,998 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-24 20:15:24,998 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-24 20:15:25,014 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-24 20:15:25,015 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-24 20:15:25,015 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-24 20:15:25,015 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-24 20:15:25,015 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-24 20:15:25,015 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-24 20:15:25,015 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-24 20:15:25,015 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-24 20:15:25,016 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-24 20:15:25,016 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-24 20:15:25,016 - api.main - INFO - Application initialisée avec succès
+2025-11-24 20:15:50,140 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:18:28,437 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 20:23:54,712 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 21:07:27,341 - api.main - INFO - Arrêt de l'application...
+2025-11-24 21:07:27,341 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-24 21:07:27,341 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-24 21:07:40,845 - api.main - INFO - Initialisation de l'application...
+2025-11-24 21:07:40,848 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-24 21:07:40,848 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-24 21:07:40,848 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-24 21:07:40,848 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 21:07:40,849 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 21:07:42,348 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-24 21:07:42,348 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-24 21:07:42,457 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-24 21:07:42,458 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-24 21:07:42,458 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-24 21:07:42,458 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-24 21:07:42,458 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-24 21:07:42,458 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-24 21:07:42,474 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-24 21:07:42,474 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-24 21:07:42,474 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-24 21:07:42,474 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-24 21:07:42,474 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-24 21:07:42,474 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-24 21:07:42,474 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-24 21:07:42,474 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-24 21:07:42,475 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-24 21:07:42,475 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-24 21:07:42,475 - api.main - INFO - Application initialisée avec succès
+2025-11-24 21:07:53,460 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 21:10:19,848 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 21:24:58,392 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-24 21:40:12,998 - api.main - INFO - Arrêt de l'application...
+2025-11-24 21:40:12,998 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-24 21:40:12,998 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-25 23:22:57,310 - api.main - INFO - Initialisation de l'application...
+2025-11-25 23:22:57,314 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-25 23:22:57,314 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-25 23:22:57,314 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-25 23:22:57,314 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-25 23:22:57,315 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-25 23:22:58,756 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-25 23:22:58,756 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-25 23:22:58,894 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-25 23:22:58,896 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-25 23:22:58,896 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-25 23:22:58,896 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-25 23:22:58,896 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-25 23:22:58,896 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-25 23:22:58,910 - llm.ollama_client - ERROR - Erreur lors de la vérification du modèle: [Errno 111] Connection refused
+2025-11-25 23:22:58,910 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-25 23:22:58,910 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-25 23:22:58,910 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-25 23:22:58,910 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-25 23:22:58,910 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-25 23:22:58,910 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-25 23:22:58,910 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-25 23:22:58,910 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-25 23:22:58,910 - api.main - INFO - Application initialisée avec succès
+2025-11-25 23:23:12,565 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-25 23:23:38,427 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:35:15,420 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:35:40,525 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:35:59,799 - api.routes.qa - INFO - Nouvelle requête de chat: 'Tu connais quoi de l'ISTQB ?...'
+2025-11-26 01:35:59,800 - llm.chain_builder - INFO - Génération RAG pour: 'Tu connais quoi de l'ISTQB ?...'
+2025-11-26 01:35:59,836 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:35:59,837 - retriever.retriever - INFO - Récupération terminée: 0 résultats pour 'Tu connais quoi de l'ISTQB ?...'
+2025-11-26 01:35:59,837 - llm.web_search - INFO - Recherche web: 'Tu connais quoi de l'ISTQB ?'
+2025-11-26 01:35:59,973 - httpx - INFO - HTTP Request: POST https://duckduckgo.com "HTTP/2 200 OK"
+2025-11-26 01:36:00,126 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=0&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,240 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=50&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,317 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=100&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,388 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=150&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,479 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=200&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,558 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=250&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,634 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=300&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,706 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=350&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,785 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=400&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,862 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=450&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,937 - httpx - INFO - HTTP Request: GET https://links.duckduckgo.com/d.js?q=Tu%20connais%20quoi%20de%20l%27ISTQB%20%3F&kl=wt-wt&l=wt-wt&bing_market=wt-WT&s=500&df=&vqd=4-290876058227873491669110245862756503505&o=json&sp=0&ex=-1 "HTTP/2 202 Accepted"
+2025-11-26 01:36:00,938 - llm.web_search - INFO - Recherche terminée en 1.10s - 0 résultats
+2025-11-26 01:36:00,938 - llm.ollama_client - ERROR - Erreur lors de la génération: [Errno 111] Connection refused
+2025-11-26 01:36:00,938 - llm.chain_builder - INFO - Réponse RAG générée en 1.14s
+2025-11-26 01:36:00,938 - api.services.rag_service - INFO - Réponse générée pour session session_iqi3ow36n
+2025-11-26 01:36:00,938 - api.routes.qa - INFO - Réponse générée pour session session_iqi3ow36n
+2025-11-26 01:36:53,266 - api.main - INFO - Arrêt de l'application...
+2025-11-26 01:36:53,266 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 01:36:53,266 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 01:37:01,474 - api.main - INFO - Initialisation de l'application...
+2025-11-26 01:37:01,476 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 01:37:01,476 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 01:37:01,476 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 01:37:01,477 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:37:01,478 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:37:02,948 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 01:37:02,948 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 01:37:03,050 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:37:03,051 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 01:37:03,051 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:37:03,051 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 01:37:03,051 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 01:37:03,051 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 01:37:03,065 - llm.ollama_client - ERROR - Erreur lors de la vérification du modèle: [Errno 111] Connection refused
+2025-11-26 01:37:03,065 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 01:37:03,065 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 01:37:03,065 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 01:37:03,065 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 01:37:03,065 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 01:37:03,065 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 01:37:03,066 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 01:37:03,066 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 01:37:03,066 - api.main - INFO - Application initialisée avec succès
+2025-11-26 01:37:05,846 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:37:41,845 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:38:10,217 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:38:15,267 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:39:02,836 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:40:23,579 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:44:00,504 - api.main - INFO - Arrêt de l'application...
+2025-11-26 01:44:00,505 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 01:44:00,505 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 01:44:08,127 - api.main - INFO - Initialisation de l'application...
+2025-11-26 01:44:08,129 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 01:44:08,135 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 01:44:08,135 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 01:44:08,135 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:44:08,136 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:44:09,567 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 01:44:09,567 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 01:44:09,669 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:44:09,669 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 01:44:09,669 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:44:09,669 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 01:44:09,669 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 01:44:09,669 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 01:44:09,683 - llm.ollama_client - ERROR - Erreur lors de la vérification du modèle: [Errno 111] Connection refused
+2025-11-26 01:44:09,683 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 01:44:09,683 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 01:44:09,683 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 01:44:09,683 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 01:44:09,683 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 01:44:09,683 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 01:44:09,684 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 01:44:09,684 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 01:44:09,684 - api.main - INFO - Application initialisée avec succès
+2025-11-26 01:44:17,597 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:48:33,733 - api.main - INFO - Arrêt de l'application...
+2025-11-26 01:48:33,733 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 01:48:33,733 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 01:48:41,296 - api.main - INFO - Initialisation de l'application...
+2025-11-26 01:48:41,298 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 01:48:41,298 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 01:48:41,298 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 01:48:41,298 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:48:41,300 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:48:42,737 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 01:48:42,737 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 01:48:42,840 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:48:42,840 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 01:48:42,840 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:48:42,840 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 01:48:42,840 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 01:48:42,840 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 01:48:42,854 - llm.ollama_client - ERROR - Erreur lors de la vérification du modèle: [Errno 111] Connection refused
+2025-11-26 01:48:42,854 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 01:48:42,855 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 01:48:42,855 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 01:48:42,855 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 01:48:42,855 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 01:48:42,855 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 01:48:42,855 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 01:48:42,855 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 01:48:42,855 - api.main - INFO - Application initialisée avec succès
+2025-11-26 01:48:51,908 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:49:18,262 - llm.ollama_client - ERROR - Health check échoué: [Errno 111] Connection refused
+2025-11-26 01:54:43,753 - api.main - INFO - Arrêt de l'application...
+2025-11-26 01:54:43,753 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 01:54:43,753 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 01:54:50,573 - api.main - INFO - Initialisation de l'application...
+2025-11-26 01:54:50,576 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 01:54:50,576 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 01:54:50,576 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 01:54:50,576 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:54:50,577 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:54:52,037 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 01:54:52,037 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 01:54:52,242 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:54:52,259 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:54:52,259 - embeddings.build_index - INFO - Collection ChromaDB créée: documents
+2025-11-26 01:54:52,259 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:54:52,259 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 01:54:52,259 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 01:54:52,259 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 01:54:52,273 - llm.ollama_client - ERROR - Erreur lors de la vérification du modèle: [Errno 111] Connection refused
+2025-11-26 01:54:52,273 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 01:54:52,273 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 01:54:52,274 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 01:54:52,274 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 01:54:52,274 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 01:54:52,274 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 01:54:52,274 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 01:54:52,274 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 01:54:52,274 - api.main - INFO - Application initialisée avec succès
+2025-11-26 01:58:16,633 - api.main - INFO - Arrêt de l'application...
+2025-11-26 01:58:16,633 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 01:58:16,633 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 01:58:30,478 - api.main - INFO - Initialisation de l'application...
+2025-11-26 01:58:30,480 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 01:58:30,480 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 01:58:30,480 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 01:58:30,480 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:58:30,482 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:58:31,928 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 01:58:31,928 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 01:58:32,029 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 01:58:32,030 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 01:58:32,030 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 01:58:32,030 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 01:58:32,030 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 01:58:32,030 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 01:58:32,045 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 01:58:32,045 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 01:58:32,045 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 01:58:32,045 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 01:58:32,045 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 01:58:32,045 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 01:58:32,046 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 01:58:32,046 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 01:58:32,046 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 01:58:32,046 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 01:58:32,046 - api.main - INFO - Application initialisée avec succès
+2025-11-26 01:58:58,993 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 01:59:48,290 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:00:02,354 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:00:17,601 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:05:28,234 - api.main - INFO - Arrêt de l'application...
+2025-11-26 02:05:28,235 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 02:05:28,235 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 02:05:36,981 - api.main - INFO - Initialisation de l'application...
+2025-11-26 02:05:36,984 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 02:05:36,984 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 02:05:36,984 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 02:05:36,984 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:05:36,985 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:05:38,474 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 02:05:38,474 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 02:05:38,576 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 02:05:38,576 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 02:05:38,576 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:05:38,576 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 02:05:38,576 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 02:05:38,576 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 02:05:38,591 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 02:05:38,591 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 02:05:38,591 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 02:05:38,591 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 02:05:38,591 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 02:05:38,591 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 02:05:38,592 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 02:05:38,592 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 02:05:38,592 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 02:05:38,592 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 02:05:38,592 - api.main - INFO - Application initialisée avec succès
+2025-11-26 02:06:04,505 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:10:52,970 - api.main - INFO - Arrêt de l'application...
+2025-11-26 02:10:52,970 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 02:10:52,970 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 02:12:23,995 - api.main - INFO - Initialisation de l'application...
+2025-11-26 02:12:23,997 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 02:12:23,998 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 02:12:23,998 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 02:12:23,998 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:12:23,999 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:12:25,628 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 02:12:25,628 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 02:12:25,730 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 02:12:25,730 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 02:12:25,730 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:12:25,730 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 02:12:25,730 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 02:12:25,730 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 02:12:25,745 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 02:12:25,746 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 02:12:25,746 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 02:12:25,746 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 02:12:25,746 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 02:12:25,746 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 02:12:25,746 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 02:12:25,746 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 02:12:25,747 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 02:12:25,747 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 02:12:25,747 - api.main - INFO - Application initialisée avec succès
+2025-11-26 02:12:32,946 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:12:38,404 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:23:10,010 - api.main - INFO - Arrêt de l'application...
+2025-11-26 02:23:10,010 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 02:23:10,010 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 02:23:21,698 - api.main - INFO - Initialisation de l'application...
+2025-11-26 02:23:21,701 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 02:23:21,701 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 02:23:21,701 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 02:23:21,701 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:23:21,702 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:23:23,137 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 02:23:23,137 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 02:23:23,238 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 02:23:23,238 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 02:23:23,238 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:23:23,238 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 02:23:23,238 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 02:23:23,238 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 02:23:23,253 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 02:23:23,253 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 02:23:23,253 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 02:23:23,253 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 02:23:23,253 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 02:23:23,254 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 02:23:23,254 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 02:23:23,254 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 02:23:23,254 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 02:23:23,254 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 02:23:23,254 - api.main - INFO - Application initialisée avec succès
+2025-11-26 02:23:49,391 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 02:49:44,931 - api.main - INFO - Arrêt de l'application...
+2025-11-26 02:49:44,931 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 02:49:44,931 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 02:49:53,205 - api.main - INFO - Initialisation de l'application...
+2025-11-26 02:49:53,208 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 02:49:53,208 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 02:49:53,208 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 02:49:53,208 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:49:53,209 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:49:54,686 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 02:49:54,686 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 02:49:54,789 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 02:49:54,790 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 02:49:54,790 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 02:49:54,790 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 02:49:54,790 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 02:49:54,790 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 02:49:54,805 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 02:49:54,805 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 02:49:54,805 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 02:49:54,805 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 02:49:54,805 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 02:49:54,805 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 02:49:54,805 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 02:49:54,805 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 02:49:54,806 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 02:49:54,806 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 02:49:54,806 - api.main - INFO - Application initialisée avec succès
+2025-11-26 02:50:07,161 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 03:02:04,168 - api.main - INFO - Arrêt de l'application...
+2025-11-26 03:02:04,168 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 03:02:04,168 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 03:02:11,683 - api.main - INFO - Initialisation de l'application...
+2025-11-26 03:02:11,686 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 03:02:11,686 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 03:02:11,686 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 03:02:11,686 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:02:11,688 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:02:13,155 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 03:02:13,155 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 03:02:13,263 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 03:02:13,263 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 03:02:13,263 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:02:13,263 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 03:02:13,263 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 03:02:13,263 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 03:02:13,279 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 03:02:13,279 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 03:02:13,279 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 03:02:13,279 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 03:02:13,279 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 03:02:13,279 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 03:02:13,279 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 03:02:13,279 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 03:02:13,280 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 03:02:13,280 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 03:02:13,280 - api.main - INFO - Application initialisée avec succès
+2025-11-26 03:02:33,664 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 03:07:21,943 - api.main - INFO - Arrêt de l'application...
+2025-11-26 03:07:21,943 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 03:07:21,943 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 03:07:29,383 - api.main - INFO - Initialisation de l'application...
+2025-11-26 03:07:29,385 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 03:07:29,385 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 03:07:29,385 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 03:07:29,385 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:07:29,387 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:07:30,813 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 03:07:30,813 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 03:07:30,916 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 03:07:30,916 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 03:07:30,916 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:07:30,916 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 03:07:30,916 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 03:07:30,916 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 03:07:30,932 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 03:07:30,932 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 03:07:30,932 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 03:07:30,932 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 03:07:30,932 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 03:07:30,932 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 03:07:30,932 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 03:07:30,932 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 03:07:30,933 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 03:07:30,933 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 03:07:30,933 - api.main - INFO - Application initialisée avec succès
+2025-11-26 03:07:47,355 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-26 03:10:12,329 - api.main - INFO - Arrêt de l'application...
+2025-11-26 03:10:12,329 - api.services.rag_service - INFO - Nettoyage des ressources du service RAG...
+2025-11-26 03:10:12,329 - api.services.rag_service - INFO - Nettoyage terminé
+2025-11-26 03:10:20,197 - api.main - INFO - Initialisation de l'application...
+2025-11-26 03:10:20,199 - api.main - INFO - Configuration chargée depuis configs/settings.yaml
+2025-11-26 03:10:20,199 - api.services.rag_service - INFO - Service RAG initialisé
+2025-11-26 03:10:20,199 - api.services.rag_service - INFO - Initialisation des composants RAG...
+2025-11-26 03:10:20,199 - embeddings.embedding_model - INFO - Chargement du modèle d'embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:10:20,201 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:10:21,644 - embeddings.embedding_model - INFO - Modèle chargé - Dimension: 384, Longueur max: 256
+2025-11-26 03:10:21,644 - api.services.rag_service - INFO - Modèle d'embeddings initialisé
+2025-11-26 03:10:21,753 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-26 03:10:21,754 - embeddings.build_index - INFO - Collection ChromaDB récupérée: documents
+2025-11-26 03:10:21,754 - embeddings.build_index - INFO - Modèle d'embeddings défini: sentence-transformers/all-MiniLM-L6-v2
+2025-11-26 03:10:21,754 - api.services.rag_service - INFO - Index vectoriel initialisé
+2025-11-26 03:10:21,754 - retriever.retriever - INFO - Récupérateur de documents initialisé
+2025-11-26 03:10:21,754 - api.services.rag_service - INFO - Récupérateur de documents initialisé
+2025-11-26 03:10:21,770 - httpx - INFO - HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+2025-11-26 03:10:21,770 - llm.ollama_client - INFO - Modèle llama3:latest disponible
+2025-11-26 03:10:21,770 - llm.ollama_client - INFO - Client Ollama initialisé - Modèle: llama3:latest
+2025-11-26 03:10:21,770 - api.services.rag_service - INFO - Client LLM initialisé
+2025-11-26 03:10:21,770 - llm.web_search - INFO - Client de recherche web initialisé - Activé: True
+2025-11-26 03:10:21,770 - api.services.rag_service - INFO - Client de recherche web initialisé
+2025-11-26 03:10:21,771 - llm.chain_builder - INFO - Constructeur de chaînes RAG initialisé
+2025-11-26 03:10:21,771 - api.services.rag_service - INFO - Chaîne RAG initialisée
+2025-11-26 03:10:21,771 - api.services.rag_service - INFO - Composants d'ingestion initialisés
+2025-11-26 03:10:21,771 - api.services.rag_service - INFO - Tous les composants RAG initialisés avec succès
+2025-11-26 03:10:21,771 - api.main - INFO - Application initialisée avec succès
+2025-11-26 03:10:27,614 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"

@@ -1,0 +1,9 @@
+{
+  "documents_processed": 2,
+  "chunks_created": 1826,
+  "processing_time": 96.89358830451965,
+  "files_processed": [
+    "data/raw/pdf_tablette_thoth.pdf",
+    "data/raw/john-dees-five-books-of-myster-joseph-h-peterson.pdf"
+  ]
+}

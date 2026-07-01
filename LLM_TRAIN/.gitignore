@@ -3,3 +3,6 @@ __pycache__/
 
 # macOS archive metadata
 __MACOSX/
+
+# macOS system files
+.DS_Store
